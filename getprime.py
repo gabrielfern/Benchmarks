@@ -13,7 +13,7 @@ def prime(num):
     if num % 2 == 0:
         return False
     
-    for i in range(3, num, 2):
+    for i in range(3, num//2, 2):
         if num % i == 0:
             return False
 

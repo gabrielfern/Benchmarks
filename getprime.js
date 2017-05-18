@@ -7,7 +7,7 @@ function prime(num) {
         return false;
 
     var i;
-    for(i = 3; i<num; i += 2) {
+    for(i = 3; i<Math.floor(num/2); i += 2) {
         if(num%i == 0)
             return false;
     }
