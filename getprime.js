@@ -1,5 +1,5 @@
 function prime(num) {
-    if(num < 2) 
+    if(num < 2)
         return false;
     if(num == 2)
         return true;
@@ -11,7 +11,7 @@ function prime(num) {
         if(num%i == 0)
             return false;
     }
-    
+
     return true;
 }
 
@@ -27,6 +27,6 @@ function yieldprime(target) {
     }
 }
 
-console.time('time taked');
+console.time('taked time');
 console.log(yieldprime(parseInt(process.argv[2])));
-console.timeEnd('time taked');
+console.timeEnd('taked time');

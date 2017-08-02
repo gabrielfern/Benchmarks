@@ -3,10 +3,10 @@
 #include <time.h>
 
 int prime(int num) {
-    if(num < 2) 
+    if(num < 2)
         return 0;
     if(num == 2)
-        return 1;
+        return 1;\
     if(num%2 == 0)
         return 0;
 
@@ -30,13 +30,20 @@ int yieldprime(int target) {
 }
 
 int main(int argc, char *argv[]) {
-    clock_t start = clock();
-    int result = yieldprime(atoi(argv[1]));
-    clock_t stop = clock();
-    double elapsed = (double)(stop - start) / 1000000;
-    
-    printf("%d\n", result);
-    printf("Time Taked: %f secs\n", elapsed);
+    if (argv[1]) {
+        clock_t start = clock();
+        int result = yieldprime(atoi(argv[1]));
+        clock_t stop = clock();
+        double elapsed = (double)(stop - start) / 1000000;
 
-    return 0;
+        printf("The nth prime number is %d\n", result);
+        printf("Taked about %f seconds\n", elapsed);
+
+        return 0;
+    }
+    else {
+        printf("You need to provide a command line argument\n%s\n%s\n",
+                "for example",
+                "./getprime 10000");
+    }
 }
