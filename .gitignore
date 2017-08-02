@@ -1,4 +1,5 @@
 # C compiled file
+*.o
 getprime
 # Java compiled file
 Prime.class
