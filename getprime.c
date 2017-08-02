@@ -45,5 +45,6 @@ int main(int argc, char *argv[]) {
         printf("You need to provide a command line argument\n%s\n%s\n",
                 "for example",
                 "./getprime 10000");
+        return 1;
     }
 }
