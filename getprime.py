@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 
 from sys import argv
 from time import time
@@ -34,7 +34,7 @@ def main():
     
     try:
         target = int(argv[1])
-        if int(argv[1]) <= 0:
+        if target <= 0:
             raise ValueError
     except(IndexError, ValueError):
         print('Needed a positive integer as command line argument')
