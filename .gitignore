@@ -3,3 +3,6 @@
 getprime
 # Java compiled file
 Prime.class
+# extended python
+*.so
+build
