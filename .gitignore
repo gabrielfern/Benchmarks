@@ -1,6 +1,8 @@
 # C compiled file
 *.o
 getprime
+# C optimized
+optprime
 # Java compiled file
 Prime.class
 # extended python
