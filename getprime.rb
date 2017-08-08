@@ -16,6 +16,7 @@ def prime(num)
     return true
 end
 
+
 def yieldprime(target)
     count = 1
     primes = 2
@@ -29,6 +30,7 @@ def yieldprime(target)
         end
     end
 end
+
 
 start = Time.now
 puts(yieldprime(Integer(ARGV[0])))

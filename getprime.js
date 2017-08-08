@@ -15,6 +15,7 @@ function prime(num) {
     return true;
 }
 
+
 function yieldprime(target) {
     var count = 1;
     var primes = 2;
@@ -26,6 +27,7 @@ function yieldprime(target) {
             count++;
     }
 }
+
 
 console.time('taked time');
 console.log(yieldprime(parseInt(process.argv[2])));
