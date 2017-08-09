@@ -8,3 +8,5 @@ Prime.class
 # extended python
 *.so
 build
+# Nuitka
+*.exe
