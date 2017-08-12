@@ -6,7 +6,7 @@ from time import time
 from numba import jit
 
 
-@jit
+@jit(cache=True)
 def prime(num):
     if num < 2:
         return False
@@ -24,7 +24,7 @@ def prime(num):
     return True
 
 
-@jit
+@jit(cache=True)
 def yieldprime(target):
     count = 1
     primes = 2

@@ -10,3 +10,5 @@ Prime.class
 build
 # Nuitka
 *.exe
+# cache
+__pycache__
