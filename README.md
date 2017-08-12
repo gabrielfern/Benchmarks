@@ -8,7 +8,7 @@ Some simple benchmark through some programming languages
     
     3.C (GCC) - 2.059262 segs
     
-    4.Python (numba) - 2.655534 segs
+    4.Python (CPython + numba) - 2.655534 segs
   
     3.Python (CPython) - 44.093389 segs
   
