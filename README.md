@@ -10,6 +10,4 @@ Some simple benchmark through some programming languages
     
     4.Python (CPython + numba) - 2.655534 segs
   
-    3.Python (CPython) - 44.093389 segs
-  
-    4.Ruby (CRuby) - 61.727203 segs
+    5.Python (CPython) - 44.093389 segs
