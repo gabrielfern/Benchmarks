@@ -4,9 +4,9 @@ getprime
 # C optimized
 optprime
 # Java compiled file
-Prime.class
+#Prime.class
 # extended python
-*.so
+#*.so
 build
 # Nuitka
 *.exe
