@@ -1,14 +1,14 @@
 function prime(num) {
     if(num < 2)
-        return false;
+        return false
     if(num == 2)
-        return true;
+        return true
     if(num%2 == 0)
-        return false;
+        return false
 
     for(let i = 3; i<Math.floor(num/2); i += 2) {
         if(num%i == 0)
-            return false;
+            return false
     }
 
     return true
@@ -20,10 +20,10 @@ function yieldprime(target) {
     var primes = 2
     while(true) {
         if(count == target)
-            return primes;
+            return primes
         primes += 1
         if(prime(primes))
-            count++;
+            count++
     }
 }
 
