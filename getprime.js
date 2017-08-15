@@ -6,29 +6,28 @@ function prime(num) {
     if(num%2 == 0)
         return false;
 
-    var i;
-    for(i = 3; i<Math.floor(num/2); i += 2) {
+    for(let i = 3; i<Math.floor(num/2); i += 2) {
         if(num%i == 0)
             return false;
     }
 
-    return true;
+    return true
 }
 
 
 function yieldprime(target) {
-    var count = 1;
-    var primes = 2;
+    var count = 1
+    var primes = 2
     while(true) {
         if(count == target)
             return primes;
-        primes += 1;
+        primes += 1
         if(prime(primes))
             count++;
     }
 }
 
 
-console.time('taked time');
-console.log(yieldprime(parseInt(process.argv[2])));
-console.timeEnd('taked time');
+console.time('taked time')
+console.log(yieldprime(parseInt(process.argv[2])))
+console.timeEnd('taked time')
