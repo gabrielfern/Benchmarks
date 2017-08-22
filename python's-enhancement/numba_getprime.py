@@ -13,10 +13,10 @@ def prime(num):
 
     if num == 2:
         return True
-    
+
     if num % 2 == 0:
         return False
-    
+
     for i in range(3, num//2, 2):
         if num % i == 0:
             return False
@@ -38,7 +38,7 @@ def yieldprime(target):
 
 def main():
     start = time()
-    
+
     try:
         target = int(argv[1])
         if target <= 0:
@@ -49,7 +49,7 @@ def main():
 
     prime = yieldprime(target)
 
-    print('Taked %.12f seconds to fetch' %(time() - start))
+    print('Taken %.12f seconds to fetch' %(time() - start))
     print(prime)
 
 

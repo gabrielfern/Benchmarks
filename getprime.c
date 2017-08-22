@@ -23,7 +23,7 @@ int yieldprime(int target) {
     while(1) {
         if(count == target)
             return primes;
-        primes += 1;
+        primes++;
         if(prime(primes))
             count++;
     }

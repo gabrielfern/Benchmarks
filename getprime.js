@@ -21,13 +21,13 @@ function yieldprime(target) {
     while(true) {
         if(count == target)
             return primes
-        primes += 1
+        primes++
         if(prime(primes))
             count++
     }
 }
 
 
-console.time('taked time')
+console.time('taken time')
 console.log(yieldprime(parseInt(process.argv[2])))
-console.timeEnd('taked time')
+console.timeEnd('taken time')

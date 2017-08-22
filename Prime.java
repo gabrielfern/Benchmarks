@@ -1,15 +1,7 @@
 class Prime {
 
-    public static void main(String[] argv) {
-        long start = System.nanoTime();
-        int prime = yieldprime(Integer.parseInt(argv[0]));
-        System.out.println("Taked " + (System.nanoTime()-start)/1000000000.0 + " seconds to fetch");
-        System.out.println(prime);
-    }
-
-
     static boolean prime(int num) {
-        if(num < 2) 
+        if(num < 2)
             return false;
         if(num == 2)
             return true;
@@ -20,19 +12,29 @@ class Prime {
             if(num%i == 0)
                 return false;
         }
-        
+
         return true;
     }
-    
+
+
     static int yieldprime(int target) {
         int count = 1;
         int primes = 2;
         while(true) {
             if(count == target)
                 return primes;
-            primes += 1;
+            primes++;
             if(prime(primes))
                 count++;
         }
+    }
+
+
+    public static void main(String[] argv) {
+        long start = System.nanoTime();
+        int prime = yieldprime(Integer.parseInt(argv[0]));
+        System.out.println("Taken " +
+        (System.nanoTime()-start)/1000000000.0 + " seconds to fetch");
+        System.out.println(prime);
     }
 }

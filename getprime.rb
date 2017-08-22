@@ -34,4 +34,4 @@ end
 
 start = Time.now
 puts(yieldprime(Integer(ARGV[0])))
-puts('Taked time: ' + String(Time.now-start))
+puts('Taken time: ' + String(Time.now-start))

@@ -34,7 +34,7 @@ func yieldprime(target int) int {
         if count == target {
             return primes
         }
-        primes += 1
+        primes++
         if prime(primes) {
             count++
         }
@@ -47,5 +47,5 @@ func main() {
 	if i, err := strconv.Atoi(os.Args[1]); err == nil {
             println(yieldprime(i))
 	}
-    fmt.Printf("taked about %f secs\n", time.Since(start).Seconds())
+    fmt.Printf("taken about %f secs\n", time.Since(start).Seconds())
 }

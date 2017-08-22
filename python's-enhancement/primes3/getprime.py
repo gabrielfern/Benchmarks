@@ -25,7 +25,7 @@ def main():
 
     prime = _getprime.yieldprime(target)
 
-    print('Taked %.12f seconds to fetch' %(time() - start))
+    print('Taken %.12f seconds to fetch' %(time() - start))
     print(prime)
 
 
