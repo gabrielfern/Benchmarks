@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 
 from sys import argv
@@ -50,5 +50,5 @@ def main():
     print(prime)
 
 
-if __name__=='__main__':
+if __name__ == '__main__':
     main()
