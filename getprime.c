@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
         double elapsed = (double) (stop-start) / 1000000;
 
         printf("The nth prime number is %d\n", result);
-        printf("Taked about %f seconds\n", elapsed);
+        printf("Taken about %f seconds\n", elapsed);
         return 0;
     }
     else {
