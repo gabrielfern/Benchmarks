@@ -19,6 +19,7 @@ int prime(int num)
     return 1;
 }
 
+
 int yieldprime(int target)
 {
     int count = 1, primes = 2;
@@ -30,6 +31,7 @@ int yieldprime(int target)
             count++;
     }
 }
+
 
 int main(int argc, char *argv[])
 {
