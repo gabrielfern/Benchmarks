@@ -1,13 +1,15 @@
+import System.Environment
+
 prime :: Int -> Bool
-yieldprime :: Int -> Int
 _prime :: Int -> Int -> Bool
+yieldprime :: Int -> Int
 _yieldprime :: Int -> Int -> Int -> Int
 
 prime num = _prime num 2
 
 _prime num 2
     | num < 2 = False
-    | num == 2 = True
+    | num == 2 || num == 3 = True
     | mod num 2 == 0 = False
     | otherwise = _prime num 3
 
@@ -23,3 +25,7 @@ _yieldprime target count primes
     | count == target = primes
     | prime (primes + 1) == True = _yieldprime target (count + 1) (primes + 1)
     | otherwise = _yieldprime target count (primes + 1)
+
+main = do
+    num <- getArgs >>= readIO.head :: IO Int
+    print (yieldprime num)
