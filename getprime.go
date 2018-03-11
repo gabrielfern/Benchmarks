@@ -7,6 +7,7 @@ import (
     "strconv"
 )
 
+
 func prime(num int) bool {
     if num < 2 {
         return false
@@ -44,8 +45,13 @@ func yieldprime(target int) int {
 
 func main() {
     start := time.Now()
-	if i, err := strconv.Atoi(os.Args[1]); err == nil {
-            println(yieldprime(i))
-	}
+
+    if len(os.Args) > 1 {
+        num, err := strconv.Atoi(os.Args[1])
+        if err == nil {
+            println(yieldprime(num))
+        }
+    }
+
     fmt.Printf("taken about %f secs\n", time.Since(start).Seconds())
 }
