@@ -1,54 +1,11 @@
-%macro printVal 1
-    mov rax, %1
-  %%printRAX:
-    mov rcx, digitSpace
-  ; mov rbx, 10
-  ; mov [rcx], rbx
-  ; inc rcx
-    mov [digitSpacePos], rcx
-
-  %%printRAXLoop:
-    mov rdx, 0
-    mov rbx, 10
-    div rbx
-    push rax
-    add rdx, 48
-
-    mov rcx, [digitSpacePos]
-    mov [rcx], dl
-    inc rcx
-    mov [digitSpacePos], rcx
-
-    pop rax
-    cmp rax, 0
-    jne %%printRAXLoop
-
-  %%printRAXLoop2:
-    mov rcx, [digitSpacePos]
-
-    mov rax, 1
-    mov rdi, 1
-    mov rsi, rcx
-    mov rdx, 1
-    syscall
-
-    mov rcx, [digitSpacePos]
-    dec rcx
-    mov [digitSpacePos], rcx
-
-    cmp rcx, digitSpace
-    jge %%printRAXLoop2
-
-    mov rax, 1
-    mov rdi, 1
-    mov rsi, nl
-    mov rdx, 1
-    syscall
-%endmacro
-
+; used nasm to assembler
+; assemble it with
+; nasm -f elf64 getprime.asm
+; ld -o asmprime getprime.o
+; on linux systems
+global _start
 
 section .text
-global _start
 
 prime:
     cmp rax, 2
@@ -137,31 +94,31 @@ atoi:
     ret
 
 print_num:
-    mov rcx, 0
-    mov rsi, 10
+    mov rbp, rsp
+    push 10
+    mov rbx, 10
+    mov rcx, 1
   print_num_loop:
-    mov rdx, 0
-    div rsi
-    push rdx
     inc rcx
+    mov rdx, 0
+    div rbx
+    add rdx, 48
+    push rdx
     cmp rax, 0
     jne print_num_loop
+    mov rbx, 0
   print_num_end_loop:
-    mov rdi, 0
-    pop rbx
-    add rbx, 48
-    mov [num_str+rdi], bl
-    inc rdi
-    cmp rcx, rdi
-    jl print_num_end_loop
-    mov rbx, 10
-    mov [num_str+rdi], bl
+    pop rax
+    mov [num_str+rbx], al
+    inc rbx
+    cmp rbx, rcx
+    jne print_num_end_loop
     mov rax, 1
     mov rdi, 1
     mov rsi, num_str
-    inc rcx
-    mov rdx, rcx
+    mov rdx, rbx
     syscall
+    mov rsp, rbp
     ret
 
 _start:
@@ -170,17 +127,10 @@ _start:
     pop rax
     call atoi
     call yieldprime
-    printVal rax
-
-    mov rax, 60 ; sys_exit
+    call print_num
+    mov rax, 60
     mov rdi, 0
     syscall
 
-
-section .data
-    nl db 10
-
 section .bss
-    num_str resb 20
-    digitSpace resb 40
-    digitSpacePos resb 1
+    num_str resb 21
