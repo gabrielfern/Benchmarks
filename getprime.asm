@@ -136,6 +136,34 @@ atoi:
     mov rax, rsi
     ret
 
+print_num:
+    mov rcx, 0
+    mov rsi, 10
+  print_num_loop:
+    mov rdx, 0
+    div rsi
+    push rdx
+    inc rcx
+    cmp rax, 0
+    jne print_num_loop
+  print_num_end_loop:
+    mov rdi, 0
+    pop rbx
+    add rbx, 48
+    mov [num_str+rdi], bl
+    inc rdi
+    cmp rcx, rdi
+    jl print_num_end_loop
+    mov rbx, 10
+    mov [num_str+rdi], bl
+    mov rax, 1
+    mov rdi, 1
+    mov rsi, num_str
+    inc rcx
+    mov rdx, rcx
+    syscall
+    ret
+
 _start:
     pop rax
     pop rax
@@ -153,5 +181,6 @@ section .data
     nl db 10
 
 section .bss
+    num_str resb 20
     digitSpace resb 40
     digitSpacePos resb 1
