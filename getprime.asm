@@ -58,7 +58,7 @@
 
     mov rax, 1
     mov rdi, 1
-    mov rsi, newline
+    mov rsi, nl
     mov rdx, 1
     syscall
 
@@ -104,7 +104,7 @@ prime:
     div rcx
     cmp rdx, 0
     je prime_false
-    inc rcx
+    add rcx, 2
     jmp prime_loop
   prime_false:
     mov rax, 0
@@ -131,21 +131,6 @@ yieldprime:
     jmp yieldprime_loop
   yieldprime_end:
     mov rax, r11
-    ret
-
-print:
-    mov r8, rax
-    call len
-    mov rcx, rax
-    mov rax, 1 ; sys_write
-    mov rdi, 1
-    mov rsi, r8
-    mov rdx, rcx
-    syscall
-    mov rax, 1
-    mov rsi, newline
-    mov rdx, 1
-    syscall
     ret
 
 len:
@@ -199,7 +184,8 @@ _start:
 
 
 section .data
-    newline db 10
+    hit db "hit"
+    nl db 10
 
 section .bss
     digitSpace resb 40
