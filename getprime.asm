@@ -113,6 +113,26 @@ prime:
     mov rax, 1
     ret
 
+yieldprime:
+    mov r9, rax
+    mov r10, 1
+    mov r11, 2
+  yieldprime_loop:
+    cmp r9, r10
+    je yieldprime_end
+    inc r11
+    mov rax, r11
+    call prime
+    cmp rax, 1
+    je yieldprime_inc_jmp
+    jmp yieldprime_loop
+  yieldprime_inc_jmp:
+    inc r10
+    jmp yieldprime_loop
+  yieldprime_end:
+    mov rax, r11
+    ret
+
 print:
     mov r8, rax
     call len
@@ -166,15 +186,11 @@ atoi:
     ret
 
 _start:
-    ; mov rax, 23
-    ; call prime
-    ; printVal rax
-
     pop rax
     pop rax
     pop rax
     call atoi
-    call prime
+    call yieldprime
     printVal rax
 
     mov rax, 60 ; sys_exit
@@ -183,11 +199,8 @@ _start:
 
 
 section .data
-    hello db "hello", 0
     newline db 10
 
 section .bss
-    buf resb 2
-    line resb 80
     digitSpace resb 40
     digitSpacePos resb 1
