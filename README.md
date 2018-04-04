@@ -1,30 +1,26 @@
 Some simple benchmark through some programming languages
 The algorithm consists of getting the nth prime number
 
-  20,000 as input (command line argument) which is 224,737
+  run ./run.py to get the time of all languages
 
-  (used the "time" command line program to measure)
+  for ./run.py 20000 (in my machine)
 
-    1.C (GCC) -                    1.599 secs
+    1.C (GCC) -                    1.596 secs
 
-    1.Python (CPython + C ext) -   1.608 secs
+    2.Java (HotSpot) -             1.741 secs
 
-    2.Java (HotSpot) -             1.690 secs
+    3.JavaScript (nodejs) -        2.702 secs
 
-    3.Python (CPython + ctypes) -  1.810 secs
+    4.Assembly (nasm) -            5.014 secs
 
-    4.Python (CPython + numba) -   2.226 secs
+    5.Go (gc) -                    5.795 secs
 
-    5.JavaScript (nodejs) -        2.585 secs
+    6.Rust (rustc) -               9.406 secs
 
-    6.Go (gc) -                    5.847 secs
+    7.Haskell (ghc) -             13.713 secs
 
-    7.Rust (rustc) -               9.409 secs
+    8.Python (CPython) -          33.057 secs
 
-    8.Haskell (ghc) -             13.710 secs
+    9.Ruby (CRuby) -              33.921 secs
 
-    9.Ruby (CRuby) -              33.967 secs
-
-    10.Python (CPython) -         48.206 secs
-
-    11.Bash (GNU bash) -              + 5 min
+    10.Bash (GNU bash) -              + 8 min
