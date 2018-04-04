@@ -7,7 +7,7 @@ The algorithm consists of getting the nth prime number
 
     1.C (GCC) -                    1.596 secs
 
-    2.Java (HotSpot) -             1.741 secs
+    2.Java (HotSpot) -             1.700 secs
 
     3.JavaScript (nodejs) -        2.702 secs
 
