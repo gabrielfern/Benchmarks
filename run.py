@@ -23,7 +23,7 @@ execs = [
 def run_all(target, attempts):
     for exec in execs:
         times = []
-        for i in range(attempts):
+        for _ in range(attempts):
             start = time()
             system(exec[0] + ' ' + target + ' > /dev/null 2>&1')
             times.append(time() - start)
