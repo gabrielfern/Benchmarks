@@ -1,11 +1,7 @@
 #!/usr/bin/env node
-// tested with node v8.4.0
 
-
-module.exports = {
-    'prime': prime,
-    'yieldprime': yieldprime
-}
+exports.prime = prime
+exports.yieldprime = yieldprime
 
 
 function prime(num) {
@@ -16,7 +12,7 @@ function prime(num) {
     if (num%2 == 0)
         return false
 
-    for (let i = 3; i<Math.floor(num/2); i += 2) {
+    for (let i = 3; i < num/2; i += 2) {
         if (num%i == 0)
             return false
     }
@@ -38,12 +34,12 @@ function yieldprime(target) {
 }
 
 
-if (require.main) {
+if (!module.parent) {
     if (process.argv.length > 2) {
         console.time('taken time')
         console.log(yieldprime(parseInt(process.argv[2])))
         console.timeEnd('taken time')
-    }
-    else
+    } else {
         console.log('Needed a positive integer as command line argument')
+    }
 }
