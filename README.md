@@ -1,9 +1,9 @@
 Some simple benchmark through some programming languages
 The algorithm consists of getting the nth prime number
 
-  run ./run.py to get the time of all languages
+  run.py to get the time of all (without sh) languages
 
-  for ./run.py 20000 (in my machine)
+  for **./run.py 20000** (in my machine)
 
     1.C (GCC) -                    1.595 secs
 

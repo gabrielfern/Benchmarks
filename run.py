@@ -38,7 +38,8 @@ def print_times():
 
 
 def main(args):
-    run_all(args[1], int(args[2]) if len(args) > 2 else 3)
+    run_all(args[1] if len(args) > 1 else '2000', 
+            int(args[2]) if len(args) > 2 else 3)
     print_times()
 
 
