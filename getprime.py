@@ -7,10 +7,8 @@ from time import time
 def prime(num):
     if num < 2:
         return False
-
     if num == 2:
         return True
-
     if num % 2 == 0:
         return False
 
