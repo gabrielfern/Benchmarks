@@ -1,11 +1,7 @@
 package main
 
-import (
-    "os"
-    "fmt"
-    "time"
-    "strconv"
-)
+import "os"
+import "strconv"
 
 
 func prime(num int) bool {
@@ -24,6 +20,7 @@ func prime(num int) bool {
             return false
         }
     }
+
     return true
 }
 
@@ -44,14 +41,10 @@ func yieldprime(target int) int {
 
 
 func main() {
-    start := time.Now()
-
     if len(os.Args) > 1 {
         num, err := strconv.Atoi(os.Args[1])
         if err == nil {
             println(yieldprime(num))
         }
     }
-
-    fmt.Printf("taken about %f secs\n", time.Since(start).Seconds())
 }

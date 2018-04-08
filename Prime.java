@@ -1,5 +1,4 @@
 class Prime {
-
     static boolean prime(int num) {
         if(num < 2)
             return false;
@@ -8,7 +7,7 @@ class Prime {
         if(num%2 == 0)
             return false;
 
-        for(int i = 3; i<(num/2); i += 2) {
+        for(int i = 3; i < (num/2); i += 2) {
             if(num%i == 0)
                 return false;
         }
@@ -31,10 +30,7 @@ class Prime {
 
 
     public static void main(String[] argv) {
-        long start = System.nanoTime();
         int prime = yieldprime(Integer.parseInt(argv[0]));
-        System.out.println("Taken " +
-        (System.nanoTime()-start)/1000000000.0 + " seconds to fetch");
         System.out.println(prime);
     }
 }

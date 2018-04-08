@@ -1,5 +1,4 @@
 use std::env;
-use std::time::Instant;
 
 
 fn prime(num: u32) -> bool {
@@ -42,14 +41,7 @@ fn yieldprime(target: u32) -> u32 {
 
 
 fn main() {
-    let start = Instant::now();
-
     let args: Vec<String> = env::args().collect();
-    let arg: u32 = args[1].trim().parse()
-    .expect("Please type a number!");
+    let arg: u32 = args[1].trim().parse().expect("Please type a number!");
     println!("{}", yieldprime(arg));
-
-    let elapsed = start.elapsed();
-    let sec = (elapsed.as_secs() as f64) + (elapsed.subsec_nanos() as f64 / 1000_000_000.0);
-    println!("Passed {} secs", sec);
 }

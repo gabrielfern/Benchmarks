@@ -34,6 +34,7 @@ function yieldprime(target) {
 }
 
 
-if (!module.parent)
+if (!module.parent) {
     if (process.argv.length > 2)
         console.log(yieldprime(parseInt(process.argv[2])))
+}
