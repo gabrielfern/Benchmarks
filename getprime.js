@@ -34,12 +34,6 @@ function yieldprime(target) {
 }
 
 
-if (!module.parent) {
-    if (process.argv.length > 2) {
-        console.time('taken time')
+if (!module.parent)
+    if (process.argv.length > 2)
         console.log(yieldprime(parseInt(process.argv[2])))
-        console.timeEnd('taken time')
-    } else {
-        console.log('Needed a positive integer as command line argument')
-    }
-}

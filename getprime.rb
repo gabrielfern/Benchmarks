@@ -35,6 +35,4 @@ def yieldprime(target)
 end
 
 
-start = Time.now
 puts(yieldprime(Integer(ARGV[0])))
-puts('Taken time: ' + String(Time.now-start))

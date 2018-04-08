@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-
 from sys import argv
 from time import time
 
@@ -33,22 +32,6 @@ def yieldprime(target):
             count += 1
 
 
-def main():
-    start = time()
-
-    try:
-        target = int(argv[1])
-        if target <= 0:
-            raise ValueError
-    except(IndexError, ValueError):
-        print('Needed a positive integer as command line argument')
-        return
-
-    prime = yieldprime(target)
-
-    print('Taken %.12f seconds to fetch' %(time() - start))
-    print(prime)
-
-
 if __name__ == '__main__':
-    main()
+    if len(argv) > 1:
+        print(yieldprime(int(argv[1])))

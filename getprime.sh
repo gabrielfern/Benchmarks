@@ -52,5 +52,5 @@ if [ $# -ne 1 ]
 then
     echo you need to provide a cli argument
 else
-    time yieldprime $1
+    yieldprime $1
 fi
