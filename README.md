@@ -5,21 +5,21 @@ The algorithm consists of getting the nth prime number
 
   for **./run.py 20000** (in my machine)
 
-    1.C (GCC) -                    1.595 secs
+    1.C (GCC) -                    1.594 secs
 
-    2.Java (HotSpot) -             1.753 secs
+    2.Rust (rustc) -               1.594 secs
 
-    3.JavaScript (nodejs) -        2.447 secs
+    3.Java (OpenJDK) -             1.739 secs
 
-    4.Assembly (nasm) -            5.013 secs
+    4.JavaScript (nodejs) -        2.445 secs
 
-    5.Go (gc) -                    5.792 secs
+    5.Assembly (nasm) -            5.013 secs
 
-    6.Rust (rustc) -               8.811 secs
+    6.Go (gc) -                    5.789 secs
 
-    7.Haskell (ghc) -             13.713 secs
+    7.Haskell (ghc) -             13.698 secs
 
-    8.Python (CPython) -          32.892 secs
+    8.Python (CPython) -          32.845 secs
 
     9.Ruby (CRuby) -              33.921 secs
 

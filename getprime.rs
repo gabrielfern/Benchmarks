@@ -6,7 +6,7 @@ fn prime(num: u32) -> bool {
     if num < 2 {
         resp = false;
     } else {
-        if num != 2 {
+        if num > 2 {
             if num%2 == 0 {
                 resp = false;
             } else {
@@ -14,6 +14,7 @@ fn prime(num: u32) -> bool {
                 while i < num/2 {
                     if num%i == 0 {
                         resp = false;
+                        break;
                     }
                     i += 2;
                 }
