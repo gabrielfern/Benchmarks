@@ -6,6 +6,7 @@ from time import time
 
 execs = {
     'python': ['python getprime.py'],
+    'dart': ['dart getprime.dart'],
     'javascript': ['node getprime.js'],
     'ruby': ['ruby getprime.rb'],
     'assembly': ['./bin/asmprime'],
